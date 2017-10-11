@@ -1,0 +1,103 @@
+<div data-ng-if="!vm.isAuthed()">
+   
+    <div class="login-container">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form ng-submit="vm.login()">
+            <div class="form-group form-control-feedback login-form-success"></div>
+            <div class="form-group">
+                <input  type="text"  placeholder="Name" class="form-control input-lg text-center"
+                       
+                       data-ng-model="vm.user.name" data-ng-maxlength="100">
+               
+            </div>
+            <div class="form-group">
+                <input  type="password" placeholder="Password" class="form-control input-lg text-center"
+                       
+                       data-ng-model="vm.user.password" data-ng-maxlength="100">
+               
+            </div>
+
+      
+
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="login()">Login</button>
+        </form>
+    </div>
+    </div>
+    </div>
+<div data-ng-if="vm.isAuthed()">
+   <div id="todo-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Name</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="product in vm.products">
+      <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td><label>
+                        <input type="submit" class = " btn btn-danger" value="Delete" data-ng-click="vm.deleteProduct(product._id)">
+                       
+                    </label></td>
+        <td>  <label>
+                        
+                        <input type="submit" class = " btn btn-info" value="Edit" data-ng-click="vm.getProduct(product._id)"> 
+                    </label></td>
+      </tr>
+                   
+         </tbody>
+         </table>         
+         
+
+        
+
+          <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+
+                       
+                        <input class="form-control input-lg text-center" placeholder="Name"  ng-model="vm.formProduct.name">
+                    </div>
+                     <div class="form-group">
+
+                      
+                        <input  class="form-control input-lg text-center" placeholder="Price" ng-model="vm.formProduct.price">
+                    </div>
+
+                   
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="vm.updateProduct(vm.formProduct._id)">Update</button>
+                </form>
+            </div>
+        </div>
+       
+        <br/>
+        
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form ng-submit = "vm.createProduct()">
+                    <div class="form-group">
+
+                      
+                        <input type="text" class="form-control input-lg text-center" placeholder="Enter name" data-ng-model="vm.formData.name">
+                    </div>
+                     <div class="form-group">
+
+                       
+                        <input type="text" class="form-control input-lg text-center" placeholder="Enter price" data-ng-model="vm.formData.price">
+                    </div>
+
+                    
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="">Add</button>
+                </form>
+            </div>
+        </div>
+</div>
+         </div>
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="vm.logout()">Logout</button>
+    </div>
+

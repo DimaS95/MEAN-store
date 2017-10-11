@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+    <head>
+        <title>The Simpliest Store</title>
+     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+  
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+      
+    </head>
+    <body data-ng-controller="AppCtrl as global">
+    
+
+        <main ui-view></main>
+
+       
+
+        <script src="vendor/angular.min.js"></script>
+        <script src="vendor/ui-bootstrap-tpls.js"></script>
+        <script src="vendor/angular-ui-router.min.js"></script>
+        <script src="vendor/moment.min.js"></script>
+
+        <script src="scripts/app.module.js"></script>
+        <script src="scripts/core/config.route.js"></script>
+        <script src="scripts/core/app.controller.js"></script>
+
+        <script src="scripts/controller/login.js"></script>
+        
+        <script src="scripts/controller/profile.js"></script>
+        <script src="scripts/controller/home.js"></script>
+        <script src="scripts/controller/admin.js"></script>
+        <script src="scripts/controller/signup.js"></script>
+       
+    </body>
+</html>

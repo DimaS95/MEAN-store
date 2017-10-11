@@ -1,0 +1,41 @@
+  
+<div class="container">
+
+        <!-- HEADER AND TODO COUNT -->
+        <div class="jumbotron text-center">
+            <h1>My store has  <span class="label label-info">{{vm.products.length}}</span> products</h1>
+        </div>
+            <button type="submit" class="btn btn-success btn-lg" ui-sref="profile">Profile</button>
+            <button type="submit" class="btn btn-success btn-lg" ui-sref="profile">Login</button>
+            <button type="submit" class="btn btn-success btn-lg" ui-sref="signup">Signup</button>
+        <!-- TODO LIST -->
+        <div id="todo-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <div class="checkbox">
+                  
+                  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="product in vm.products">
+      <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        
+      </tr>
+                     
+                </div>
+
+            </div>
+        </div>
+
+          
+        
+
+    </div>
+
